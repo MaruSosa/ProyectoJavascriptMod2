@@ -12,11 +12,11 @@ body{
 }
 main{
   flex-grow: 1;
-  padding-top: 120px;
 }
 header{
   font-size: 20px;
 }
+/*estilo navbar*/
 .img-fluid{
   width: 300px;
   height: 100px;
@@ -71,7 +71,7 @@ header{
 .navbar-nav li.active {
 background-color: var(--main-color);
 }
-/* -estilo cambio de color globo-*/
+/* -estilo del login-*/
 .form-control{
   height: 50px;
 }
@@ -113,6 +113,7 @@ h4{
   font-family: 'Acme', sans-serif;
   color: #0079FF;
 }
+/*estilo login*/
 .botonLogin{
   margin-top: 1em;
   background-color: #00DFA2;
@@ -141,7 +142,7 @@ h4{
   background-color: #0079FF;
 }
 .botonReg:hover{
-  background-color:#FF0060 ;
+  background-color:#FF0060;
 }
 .card{
   height: 100%;
@@ -151,9 +152,13 @@ h4{
   height: 50%;
   margin: 0 auto; 
   display: block;
-  height: 200px; /* Altura deseada para las imágenes */
+  height: 200px; 
   object-fit: cover;
+  border-radius: 60%;
+  margin-top: 10px;
+  border: 2px solid #FF0060;
 }
+/*estilos de cambio de color del globo*/
 div.container h3 {
   color: #444;
   font-size: 24px;
@@ -178,8 +183,6 @@ div.container h3 {
   margin-right: 30px;
   cursor: pointer;    
 }
-
-
 .color-select #red {
   background: rgb(207, 6, 23);
 }
