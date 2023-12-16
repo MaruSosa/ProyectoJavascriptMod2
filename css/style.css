@@ -215,6 +215,17 @@ h2{
 }
 .fotoPerfil{
   border-radius: 50%;
-  width: 350px;
+  width: 250px;
   height: auto;
+  border: 1px solid #00DFA2;
+}
+.descripcionPerfil p{
+  font-size: 22px;
+}
+.descripcionPerfil h5{
+  font-size: 30px;
+  color: #0079FF;
+}
+.descripcionPerfil{
+  color: #FF0060;
 }
