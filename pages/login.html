@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="mariana sosa" />
+    <meta
+      name="description"
+      content="Proyecto de pagina de una tienda online de cotillon"
+    />
+    <meta name="keywords" content="cotillon,cumpleaños,decoracion" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+        <div class="container-fluid colorNav">
+          <a href="./index.html"
+            ><img
+              src="../img/loAleliTransparente.png"
+              alt="logo"
+              class="img-fluid"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mt-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Principal</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./productos.html">Productos</a>
+              </li>
+              <li class="nav-item list-unstyled">
+                <a class="nav-link active" href="./pages/login.html"
+                  >Ingresar</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-none d-sm-block">
+            <img src="../img/imgLogo.png" alt="imgLogin" class="img-fluid logoLogin">
+          </div>
+          <div class="col-md-6">
+            <form class="form-signin text-center">
+              <h4 class="form-signin-heading">Iniciar Sesión</h4>
+              <input type="text" class="form-control" placeholder="Usuario" required autofocus>
+              <input type="password" class="form-control" placeholder="Contraseña" required>
+              <div class="d-grid mb-3">
+                <button class="btn btn-lg botonLogin" onclick="iniciarSesion();">Ingresar</button>
+              </div>
+              <div class="update"></div>
+              <div class="text-center mt-3">
+                <a href="./error404.html" class="text-decoration-none">¿Olvidaste tu contraseña?</a><br>
+                <a href="./registro.html" class="text-decoration-none">Registrarme</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <script
+      src="https://kit.fontawesome.com/86fe48ff47.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
