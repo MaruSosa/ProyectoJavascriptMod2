@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Acme', sans-serif;
 }
 body{
   min-height: 100vh;
@@ -202,4 +202,19 @@ div.container h3 {
   width: 300px;
   height: auto;
   margin-top: 20px;
+}
+/*estilos nosotros*/
+h2{
+  font-size: 50px;
+  color: #FF0060;
+}
+.textoNosotros p{
+  font-size: 23px;
+  color: #0079FF;
+  background-color: #F6FA70;
+}
+.fotoPerfil{
+  border-radius: 50%;
+  width: 350px;
+  height: auto;
 }
