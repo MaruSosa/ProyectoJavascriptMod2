@@ -52,9 +52,9 @@ const Confettiful = function(el) {
   
   
   /*-------------------------- */
-  var duration = 15 * 1000;
-var animationEnd = Date.now() + duration;
-var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  let duration = 15 * 1000;
+let animationEnd = Date.now() + duration;
+let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
@@ -67,8 +67,37 @@ var interval = setInterval(function() {
     return clearInterval(interval);
   }
 
-  var particleCount = 50 * (timeLeft / duration);
-  // since particles fall down, start a bit higher than random
+  let particleCount = 50 * (timeLeft / duration);
   confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
   confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
 }, 250);
+/*aumentar y desminuir la cantidad de producto */
+function checkInputSize() {
+    let input = document.getElementById('quantityInput');
+    input.size = input.value.length > 1 ? input.value.length : 1;
+}
+
+function increaseQuantity() {
+    let input = document.getElementById('quantityInput');
+    let currentValue = parseInt(input.value);
+    input.value = currentValue + 1;
+    checkInputSize();
+}
+
+function decreaseQuantity() {
+    let input = document.getElementById('quantityInput');
+    let currentValue = parseInt(input.value);
+    if (currentValue > 1) {
+        input.value = currentValue - 1;
+        checkInputSize();
+    }
+}
+
+  /*boton para agregar al carrito*/
+  function addToCart() {
+    // Aquí tendrías la lógica para agregar el producto al carrito
+    // Por ejemplo, podrías enviar una solicitud al backend con la información del producto
+    // y el backend se encargaría de manejar la lógica para agregarlo al carrito de compras.
+    console.log('Producto agregado al carrito');
+  }
+  

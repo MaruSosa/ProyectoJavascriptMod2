@@ -767,3 +767,25 @@ color: #FF0060;
 font-size: 14px;
 color:#0079FF;
 }
+/*estilo detalle de globo luminoso*/
+.detalleGloboLuminoso ul li{
+  font-size: 20px;
+}
+.inputCantidad{
+  font-size: 20px;
+  width: 50px;
+  display: flex;
+  border-radius: 50%;
+}
+#imgGl{
+  width: 350px;
+  height: auto;
+}
+.btnDetalle {
+  background-color:#FF0060;
+  border-radius: 50px; 
+  padding: 10px 20px; 
+  color: #fff;
+  border: none; 
+  font-size: 20px;
+}
