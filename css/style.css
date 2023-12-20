@@ -555,6 +555,10 @@ h2{
   color:#00DFA2;
   background-color: #0079FF;
 }
+.colorTitulo{
+  font-size: 40px;
+  color:#00DFA2;
+}
 .product-content h3.title a{
   font-size: 24px; 
   color: #FF0060;
@@ -719,12 +723,17 @@ height: 2px;
 width: 50px;
 background: #FF0060;
 }
-.footer-widget ul li {
-display: inline-block;
-float: left;
-width: 50%;
-margin-bottom: 12px;
+.footer-widget ul {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.footer-widget ul li {
+  width: 50%;
+  margin-bottom: 12px;
+
+}
+
 .footer-widget ul li a:hover{
 color: #FF0060;
 }
@@ -815,7 +824,6 @@ color:#0079FF;
 #imgCoti{
   height: 350px;
   width: auto;
-  display: block;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
