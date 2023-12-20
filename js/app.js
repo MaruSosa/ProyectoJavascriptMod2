@@ -92,12 +92,5 @@ function decreaseQuantity() {
         checkInputSize();
     }
 }
-
-  /*boton para agregar al carrito*/
-  function addToCart() {
-    // Aquí tendrías la lógica para agregar el producto al carrito
-    // Por ejemplo, podrías enviar una solicitud al backend con la información del producto
-    // y el backend se encargaría de manejar la lógica para agregarlo al carrito de compras.
-    console.log('Producto agregado al carrito');
-  }
+/* logica de registro de usuario */
   
