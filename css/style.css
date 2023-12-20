@@ -804,3 +804,19 @@ color:#0079FF;
   background-repeat: no-repeat;
   background-size: cover;
 }
+#imgPeluca{
+  height: 350px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#imgCoti{
+  height: 350px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
