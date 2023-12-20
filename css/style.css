@@ -796,3 +796,11 @@ color:#0079FF;
   border: 3px solid #FF0060;
   border-radius: 50%;
 }
+.imgbanderin{
+  max-height: 850px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
