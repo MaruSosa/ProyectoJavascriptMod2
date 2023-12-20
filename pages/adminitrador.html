@@ -24,22 +24,12 @@
               <a class="nav-link" aria-current="page" href="../index.html">Principal</a>
             </li>
             <li class="nav-item mt-2">
-              <a class="nav-link active" href="./productos.html">Productos</a>
+              <a class="nav-link active" href="./adminitrador.html">Listado de Productos</a>
             </li>
             <li class="nav-item mt-2">
-              <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              <a class="nav-link" href="./error404.html">Usuarios</a>
             </li>
           </ul>
-          <div class="collapse navbar-collapse me-lg-3" id="navbarSupportedContent">
-            <ul class=" ms-auto mb-2 mt-2 mb-lg-0 d-flex">
-          <li class="nav-item list-unstyled">
-            <a class="nav-link" href="./login.html"><i class="fa-solid fa-user mx-2"></i></a>
-          </li>
-          <li class="nav-item list-unstyled">
-            <a class="nav-link" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-        </div>
           <form class="d-flex mt-2" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -48,85 +38,100 @@
       </div>
     </nav>
    </header>
-   <main style="padding-top: 150px;" class="mb-5">
+   <main  class="mb-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-3 card-Contenedora">
-            <img src="../img/globos/globosPaquete.jpg" class="card-img-top img-fluid efectoImagen" alt="globos">
-            <div class="card-body text-center">
-              <h5 class="card-title">Globos</h5>
-              <p class="card-text">Los colores más vibrantes y variados en globos, calidad garantizada</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="../pages/globos.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img src="../img/banderines/carteles.png" class="card-img-top img-fluid" alt="banderines">
-            <div class="card-body text-center">
-              <h5 class="card-title">Banderines</h5>
-              <p class="card-text">¡Estos adorables banderines de cumpleaños que llenarán tu espacio con alegría y color!</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="./banderines.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img src="../img/cotillonFluo (2).png" class=" card-img-top img-fluid" alt="cotillon">
-            <div class="card-body text-center">
-              <h5 class="card-title">Cotillon,Cotillon Fluo/Luminoso</h5>
-              <p class="card-text">Una fiesta que brille en la oscuridad con nuestro cotillón fluo, donde la diversión nunca se apaga</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="./cotillon.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img src="../img/maquillajes/maquillaje3.png" class="card-img-top img-fluid" alt="maquillaje">
-            <div class="card-body text-center">
-              <h5 class="card-title">Maquillajes</h5>
-              <p class="card-text"> "¡Sumérgete en un mundo de creatividad y diversión con nuestros maquillajes artísticos para cumpleaños!</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="./error404.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img src="../img/platitos y vasitos.jpg" class="card-img-top img-fluid" alt="descartables">
-            <div class="card-body text-center">
-              <h5 class="card-title">Descartables</h5>
-              <p class="card-text">¡Haz que la preparación y la limpieza sean un juego de niños con nuestra amplia gama de opciones de descartables para eventos!
-              </p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="./error404.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img src="../img/velas.png" class="card-img-top img-fluid" alt="velas">
-            <div class="card-body text-center">
-              <h5 class="card-title">Velas y Bengalas</h5>
-              <p class="card-text"> La chispa perfecta para iluminar tu celebración</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center">
-              <a href="./error404.html" class="btn btn-primary">Ver Productos</a>
-            </div>
-          </div>
-        </div>
-    </div>
+        
     </div>
    </main>
+   <main class="container my-3" style="padding-top: 150px;">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="text-center">Lista de Productos</h1>
+      <button class="btn btn-primary" id="btnNuevoContacto">
+        Nuevo Producto
+      </button>
+    </div>
+    <section class="table-responsive mt-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+   <!-- Modal -->
+   <div
+   class="modal fade"
+   id="administrarProducto"
+   tabindex="-1"
+   aria-labelledby="administrarProductoLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h2 class="modal-title fs-5" id="administrarProductoLabel">
+           Administrar Producto
+         </h2>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+           aria-label="Close"
+         ></button>
+       </div>
+       <div class="modal-body">
+         <form enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input
+                  type="file"
+                  id="imagen"
+                  class="form-control"
+                  accept="image/png, image/jpeg"
+                />
+              </div>
+           <div class="mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input
+               type="text"
+               id="nombre"
+               class="form-control"
+               placeholder="Ej: Bengalas"
+             />
+           </div>
+           <div class="mb-3">
+             <label for="descripcion" class="form-label">Descripcion</label>
+             <input
+               type="text"
+               id="descripcion"
+               class="form-control"
+               placeholder="Ej: Bengala de humor"
+             />
+           </div>
+           <div class="mb-3">
+             <label for="precio" class="form-label">Precio</label>
+             <input
+               type="text"
+               id="precio"
+               class="form-control"
+               placeholder="Ej: 123"
+             />
+           </div>
+           <button class="btn btn-primary" type="submit">Agregar</button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
    <footer class="footer-section">
     <div class="container">
         <div class="footer-cta pt-5 pb-5">
