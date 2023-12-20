@@ -1,126 +1,3 @@
-/* logica de nuevo producto*/
-import Producto from "./classProducto.js";
-import { validarCantidadCaracteres,validarImagen} from "./validaciones.js";
-const modalAdminProducto = new bootstrap.Modal(
-  document.getElementById("administrarProducto")
-);
-const btnAgregarProducto = document.getElementById("btnNuevoProducto");
-const formularioProducto = document.querySelector("form");
-const imagen= document.getElementById("imagen");
-const nombre = document.getElementById("nombre"),
-  descripcion = document.getElementById("descripcion"),
-  precio = document.getElementById("precio");
-const Listaproductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
-
-const mostrarModal = () => {
-  limpiarFormulario();
-  modalAdminProducto.show();
-};
-const crearProducto = (e) => {
-  e.preventDefault();
-  if (validarCantidadCaracteres(nombre.value, 2, 20) &&
-  validarCantidadCaracteres(descripcion.value, 10, 150) &&
-  validarPrecio(precio.value)&& validarImagen(imagen.value)) {
-//crearia el Producto
-const nuevoProducto = new Producto(
-  undefined,
-  imagen.value,
-  nombre.value,
-  descripcion.value,
-  precio.value
-);
-Listaproductos.push(nuevoProducto);
-limpiarFormulario();
-
-guardarEnLocalstorage();
-
-crearFila(nuevoProducto, Listaproductos.length);
-modalAdminProducto.hide(); 
-
-Swal.fire({
-  title: "Producto creado",
-  text: `El Producto ${nuevoProducto.nombre} fue creado correctamente`,
-  icon: "success",
-});
-}else{
-  alert('hay errores en el formulario');
-}
-  };
-  function validarPrecio(precio) {
-    return !isNaN(precio) && parseFloat(precio) >= 0;
-}
-function limpiarFormulario() {
-  formularioContacto.reset();
-}
-
-function guardarEnLocalstorage() {
-  localStorage.setItem("agendaKey", JSON.stringify(agenda));
-}
-
-function crearFila(contacto, fila) {
-  const tablaContactos = document.querySelector("tbody");
-  tablaContactos.innerHTML += `<tr>
-    <th scope="row">${fila}</th>
-    <td>${contacto.nombre}</td>
-    <td>${contacto.apellido}</td>
-    <td>${contacto.email}</td>
-    <td>${contacto.celular}</td>
-    <td>
-      <button class="btn btn-primary" onclick="verDetalleContacto('${contacto.id}')">Ver Detalle</button>
-      <button class="btn btn-warning me-1">Editar</button
-      ><button class="btn btn-danger" onclick="borrarContacto('${contacto.id}')">Borrar</button>
-    </td>
-  </tr>`;
-}
-
-function cargaInicial() {
-  if (Listaproductos.length > 0) {
-    Listaproductos.map((itemProducto, posicion) =>
-      crearFila(itemProducto, posicion + 1)
-    );
-  }
-}
-window.borrarProducto = (idProducto) => {
-  Swal.fire({
-    title: "¿Estas seguro que quieres borrar?",
-    text: "No puedes revertir este paso",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Borrar",
-    cancelButtonText: "Cancelar",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      const posicionProductoBuscado = Listaproductos.findIndex(
-        (itemContacto) => itemContacto.id === idContacto
-      );
-      Listaproductos.splice(posicionProductoBuscado, 1);
-      guardarEnLocalstorage();
-      const tablaContactos = document.querySelector("tbody");
-      console.log(tablaContactos.children[posicionContactoBuscado]); //objeto.propiedad[posicionarray]
-      tablaContactos.removeChild(
-        tablaContactos.children[posicionContactoBuscado]
-      );
-      Swal.fire({
-        title: "Contacto eliminado",
-        text: "El contacto fue eliminado exitosamente",
-        icon: "success",
-      });
-    }
-  });
-};
-
-window.verDetalleContacto=(idContacto)=> {
-  console.log(window.location);
-  window.location.href= window.location.origin +'/CRUDAgenda-c76i-administrarContactos/pages/detalleContacto.html?id='+idContacto;
-};
-//logica extra
-btnAgregarContacto.addEventListener("click", mostrarModal);
-formularioContacto.addEventListener("submit", crearContacto);
-
-cargaInicial();
-
 
 /*logica de papelitos */
 const Confettiful = function(el) {
@@ -215,4 +92,127 @@ function decreaseQuantity() {
       input.value = currentValue - 1;
       checkInputSize();
   }
+};
+/* logica de nuevo producto*/
+import Producto from "./classProducto.js";
+import { validarCantidadCaracteres, validarCantidadCaracteresDescripcion, validarImagenExtension, validarPrecioConRegex } from "./validaciones.js";
+const modalAdminProducto = new bootstrap.Modal(
+  document.getElementById("administrarProducto")
+);
+const btnAgregarProducto = document.getElementById("btnNuevoProducto");
+const formularioProducto = document.querySelector("form");
+const imagen= document.querySelector("imagen");
+const nombre = document.getElementById("nombre"),
+  descripcion= document.getElementById("descripcion"),
+ precio= document.getElementById("precio");
+  
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+
+
+const mostrarModal = () => {
+  limpiarFormulario();
+  modalAdminProducto.show();
+};
+
+const crearProducto = (e) => {
+  e.preventDefault();
+  if (
+    validarCantidadCaracteres(nombre.value, 2, 20) &&
+    validarCantidadCaracteresDescripcion(descripcion.value, 10, 150) &&
+    validarImagenExtension(imagen) &&
+    validarPrecio(precio.value)
+  ) {
+    const nuevoProducto= new Producto(
+      undefined,
+      imagen.value,
+      nombre.value,
+      descripcion.value,
+      precio.value,
+    );
+    listaProductos.push(nuevoContacto);
+    limpiarFormulario();
+    guardarEnLocalstorage();
+    crearFila(nuevoProducto, listaProductos.length);
+    modalAdminProducto.hide();
+    Swal.fire({
+      title: "Producto creado",
+      text: `El Producto ${nuevoProducto.nombre} fue creado correctamente`,
+      icon: "success",
+    });
+  }else{
+    alert('Hay errores en el formulario')
+  }
+};
+
+function limpiarFormulario() {
+  formularioProducto.reset();
 }
+
+function guardarEnLocalstorage() {
+  localStorage.setItem("agendaKey", JSON.stringify(listaProductos));
+}
+
+function crearFila(producto, fila) {
+  const tablaProductos = document.querySelector("tbody");
+  tablaProductos.innerHTML += `<tr>
+    <th scope="row">${fila}</th>
+    <td>${producto.imagen}</td>
+    <td>${producto.nombre}</td>
+    <td>${producto.descripcion}</td>
+    <td>${producto.precio}</td>
+    <td>
+    <button class="btn btn-primary" onclick="verDetalleProducto('${producto.id}')">Ver detalle</button>
+      <button class="btn btn-warning me-1">Editar</button
+      ><button class="btn btn-danger" onclick="borrarContacto('${producto.id}')">Borrar</button>
+    </td>
+  </tr>`;
+}
+
+function cargaInicial() {
+  if (listaProductos.length > 0) {
+    listaProductos.map((itemProducto, posicion) =>
+      crearFila(itemProducto, posicion + 1)
+    );
+  }
+
+}
+window.borrarProducto = (idProducto) => {
+  Swal.fire({
+    title: "¿Estas seguro que quieres borrar?",
+    text: "No puedes revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const posicionProductoBuscado = Listaproductos.findIndex(
+        (itemContacto) => itemContacto.id === idContacto
+      );
+      Listaproductos.splice(posicionProductoBuscado, 1);
+      guardarEnLocalstorage();
+      const tablaContactos = document.querySelector("tbody");
+      console.log(tablaContactos.children[posicionContactoBuscado]); //objeto.propiedad[posicionarray]
+      tablaContactos.removeChild(
+        tablaContactos.children[posicionContactoBuscado]
+      );
+      Swal.fire({
+        title: "Contacto eliminado",
+        text: "El contacto fue eliminado exitosamente",
+        icon: "success",
+      });
+    }
+  });
+};
+
+window.verDetalleProducto=(idProducto)=> {
+  console.log(window.location);
+  window.location.href= window.location.origin +'/pages/detalleGloboLuminoso.html'+idProducto;
+};
+//logica extra
+btnAgregarProducto.addEventListener("click", mostrarModal);
+formularioProducto.addEventListener("submit", crearProducto);
+
+cargaInicial();
