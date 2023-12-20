@@ -789,3 +789,10 @@ color:#0079FF;
   border: none; 
   font-size: 20px;
 }
+.flechaVolver{
+  font-size: 30px;
+  padding: 10px;
+  color:#FF0060;
+  border: 3px solid #FF0060;
+  border-radius: 50%;
+}
