@@ -1,12 +1,12 @@
 /* logica de nuevo producto*/
 import Producto from "./classProducto.js";
-import { validarCantidadCaracteres,  validarCantidadCaracteresDescripcion,validarPrecio,validarImagen } from "./validaciones.js";
+import { validarCantidadCaracteres,validarCantidadCaracteresDescripcion,validarPrecio,validarImagen } from "./validaciones.js";
 
 const modalAdminProducto = new bootstrap.Modal(
   document.getElementById("administrarProducto")
 );
 const btnAgregarProducto = document.getElementById("btnNuevoProducto");
-const formularioProducto = document.querySelector("form");
+const formularioProducto = document.getElementById("form");
 const nombre = document.getElementById("nombre"),
   descripcion = document.getElementById("descripcion"),
   precio = document.getElementById("precio"),
@@ -19,36 +19,34 @@ const mostrarModal = () => {
   modalAdminProducto.show();
 };
 
-const crearProducto= (e) => {
+const crearProducto = (e) => {
   e.preventDefault();
-  if (validarCantidadCaracteres(nombre.value, 2, 20) && validarCantidadCaracteres(descripcion.value, 10, 150) && validarImagen(imagen)&&validarPrecio(precio.value)) {
-   
-    const nuevoProducto = new producto(
-      undefined,
-      nombre.value,
-      descripcion.value,
-      precio.value,
-      imagen.value
-    );
-
+  const imagenFile = document.getElementById('imagen').files[0];
+  if (
+    validarCantidadCaracteres(nombre.value, 2, 20) &&
+    validarCantidadCaracteresDescripcion(descripcion.value, 10, 150) &&
+    validarImagen(imagenFile) &&
+    validarPrecio(precio.value)
+  ) {
+    console.log(nuevoProducto);
     listaProductos.push(nuevoProducto);
-
+    console.log(listaProductos);
     limpiarFormulario();
-
     guardarEnLocalstorage();
-
+ 
     crearFila(nuevoProducto, listaProductos.length);
     modalAdminProducto.hide();
-   
+ 
     Swal.fire({
       title: "Producto creado",
       text: `El producto ${nuevoProducto.nombre} fue creado correctamente`,
       icon: "success",
     });
-  }else{
-    alert('Hay errores en el formulario')
+  } else {
+    alert('Hay errores en el formulario');
   }
 };
+
 
 function limpiarFormulario() {
   formularioProducto.reset();
@@ -62,14 +60,14 @@ function crearFila(producto, fila) {
   const tablaProductos = document.querySelector("tbody");
   tablaProductos.innerHTML += `<tr>
     <th scope="row">${fila}</th>
+    <td><img src="${producto.imagen}" alt="${producto.nombre}" style="max-width: 100px; max-height: 100px;"></td>
     <td>${producto.nombre}</td>
     <td>${producto.descripcion}</td>
     <td>${producto.precio}</td>
-    <td>${producto.imagen}</td>
     <td>
-    <button class="btn btn-primary" onclick="verDetalleProducto('${producto.id}')">Ver detalle</button>
-      <button class="btn btn-warning me-1">Editar</button
-      ><button class="btn btn-danger" onclick="borrarProducto('${producto.id}')">Borrar</button>
+      <button class="btn btn-primary" onclick="verDetalleProducto('${producto.id}')">Ver detalle</button>
+      <button class="btn btn-warning me-1">Editar</button>
+      <button class="btn btn-danger" onclick="borrarProducto('${producto.id}')">Borrar</button>
     </td>
   </tr>`;
 }
