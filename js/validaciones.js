@@ -12,21 +12,30 @@ export const validarCantidadCaracteresDescripcion= (texto,min,max)=>{
         return false;
     }
 }
-export const validarImagen = (imagen) => {
-    const patron = /\.(jpg|jpeg|png|gif)$/i;
-    const nombreArchivo = imagen.name;
-    if (patron.test(nombreArchivo)) {
-      console.log('El formato de la imagen es válido');
-      return true;
-    } else {
-      console.log('El formato de la imagen es erróneo');
-      return false;
-    }
-  };
-  
+export const validarImagen = (url) => {
+  const patron = /\.(jpg|jpeg|png|gif)$/i;
+  if (patron.test(url)) {
+    console.log('La URL de la imagen tiene un formato válido');
+    return true;
+  } else {
+    console.log('La URL de la imagen tiene un formato erróneo');
+    return false;
+  }
+};
   
  export const validarPrecio=(precio)=> {
     const regex = /^(?!0+(\.0+)?$)(?!-0+(\.0+)?$)\d+(\.\d+)?$/;
     return regex.test(precio);
   }
-/*validaciones de registro */
+// Expresión regular para validar un correo electrónico
+ export const validarEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+// Expresión regular para validar la contraseña (requiere al menos 8 caracteres, una mayúscula, una minúscula y un número)
+ export const validarContrasena = (contrasena) => {
+  const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+  return regex.test(contrasena);
+};
+

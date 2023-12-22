@@ -93,19 +93,19 @@
         <form id="form">
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: bengala">
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: bengala" required>
           </div>
           <div class="mb-3">
             <label for="descripcion" class="form-label">Descripcion</label>
-            <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Ej: bengalas de humo">
+            <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Ej: bengalas de humo" required>
           </div>
           <div class="mb-3">
             <label for="imagen" class="form-label">Imagen</label>
-            <input type="file" id="imagen" name="imagen" class="form-control" accept="image/png, image/jpeg, image/jpg">
+            <input type="text" id="imagen" name="imagen" class="form-control" required>
         </div>        
           <div class="mb-3">
             <label for="precio" class="form-label">Precio</label>
-            <input type="text" id="precio" name="precio" class="form-control" placeholder="$">
+            <input type="number" id="precio" name="precio" class="form-control" placeholder="$" required>
           </div>
           <button class="btn btn-primary" type="submit">Agregar</button>
         </form>
