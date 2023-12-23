@@ -135,3 +135,39 @@ function limpiarFormulario() {
   formularioProducto.reset();
 }
 
+window.borrarProducto = (id) => {
+  Swal.fire({
+    title: "¿Esta seguro de borrar el producto?",
+    text: "No puedes volver atras luego de borrar un producto",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      
+      console.log(id);
+   
+      let posicionProducto = listaProductos.findIndex(
+        (producto) => producto.id === id
+      );
+   
+      listaProductos.splice(posicionProducto, 1);
+     
+      guardarEnLocalstorage();
+     
+      let tablaProducto = document.getElementById("tablaProducto");
+      tablaProducto.removeChild(tablaProducto.children[posicionProducto]);
+      
+      Swal.fire(
+        "Producto eliminado",
+        `El Producto ${producto.nombre} fue borrada correctamente`,
+        "success"
+      );
+     
+    }
+  });
+};
