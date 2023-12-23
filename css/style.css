@@ -782,3 +782,11 @@ color:#0079FF;
   background-repeat: no-repeat;
   background-size: cover;
 }
+/*estilos boton categorias del modal para crear editar producto*/
+.btnCategorias{
+  background-color: #0079FF;
+  color:#e1e3e4;
+}
+.btnCategorias:hover{
+  background-color: #FF0060;
+}

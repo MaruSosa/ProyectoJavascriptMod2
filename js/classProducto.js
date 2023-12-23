@@ -55,14 +55,13 @@ export default class Producto {
     this.#descripcion = nuevaDescripcion;
   }
 
-  // Método para el objeto JSON.stringify
   toJSON() {
     return {
       id: this.id,
       nombre: this.nombre,
       precio: this.precio,
       descripcion: this.descripcion,
-      imagen: this.imagen,
+      imagen: this.imagen
     };
   }
 }
